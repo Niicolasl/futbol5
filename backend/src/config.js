@@ -1,0 +1,1 @@
+export const TOKEN_SECRET = process.env.JWT_SECRET || "clave_secreta_super_segura_123"
