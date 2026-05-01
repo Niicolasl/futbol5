@@ -17,3 +17,16 @@ export const actualizarCanchaRequest = (id, data) =>
 
 export const eliminarCanchaRequest = (id) =>
     axios.delete(`${API}/${id}`, { withCredentials: true })
+// Horarios
+export const getHorariosRequest = () =>
+    axios.get('/api/horarios')
+
+export const updateHorariosRequest = (data) =>
+    axios.put('/api/horarios', data, { withCredentials: true })
+
+// Calificaciones
+export const calificarCanchaRequest = (id, data) =>
+    axios.post(`${API}/${id}/calificar`, data, { withCredentials: true })
+
+export const getCalificacionesRequest = (id) =>
+    axios.get(`${API}/${id}/calificaciones`, { withCredentials: true })

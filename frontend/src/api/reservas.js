@@ -17,3 +17,12 @@ export const getDisponibilidadRequest = (canchaId, fecha) =>
 // Admin
 export const getTodasReservasRequest = () =>
     axios.get(`${API}/todas`, { withCredentials: true })
+
+export const editarReservaAdminRequest = (id, data) =>
+    axios.put(`${API}/${id}/admin`, data, { withCredentials: true })
+
+export const cancelarReservaAdminRequest = (id) =>
+    axios.delete(`${API}/${id}/admin`, { withCredentials: true })
+
+export const getReportesRequest = (params = {}) =>
+    axios.get('/api/reportes', { params, withCredentials: true })

@@ -9,6 +9,7 @@ import Register from './pages/Register'
 import Canchas from './pages/Canchas'
 import MisReservas from './pages/MisReservas'
 import Admin from './pages/Admin'
+import Perfil from './pages/Perfil'
 
 function App() {
   return (
@@ -20,13 +21,12 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
 
-          {/* Rutas protegidas para usuarios autenticados */}
           <Route element={<ProtectedRoute />}>
             <Route path='/canchas' element={<Canchas />} />
             <Route path='/mis-reservas' element={<MisReservas />} />
+            <Route path='/perfil' element={<Perfil />} />
           </Route>
 
-          {/* Rutas protegidas solo para admin */}
           <Route element={<AdminRoute />}>
             <Route path='/admin' element={<Admin />} />
           </Route>

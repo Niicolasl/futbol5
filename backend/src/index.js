@@ -8,6 +8,7 @@ import { connectDB } from './db.js'
 import authRoutes from './routes/auth.routes.js'
 import canchaRoutes from './routes/cancha.routes.js'
 import reservaRoutes from './routes/reserva.routes.js'
+import horarioRoutes from './routes/horario.routes.js'
 
 dotenv.config()
 
@@ -26,6 +27,7 @@ connectDB()
 app.use('/api', authRoutes)
 app.use('/api', canchaRoutes)
 app.use('/api', reservaRoutes)
+app.use('/api', horarioRoutes)
 
 // Manejo global de errores de Mongoose (IDs malformados, etc.)
 app.use((err, req, res, next) => {

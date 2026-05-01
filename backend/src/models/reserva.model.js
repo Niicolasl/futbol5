@@ -9,7 +9,9 @@ const reservaSchema = new mongoose.Schema({
     cantidadHoras: { type: Number, required: true, min: 1, max: 6 },
     nombreContacto: { type: String, required: true, trim: true },
     telefono: { type: String, required: true, trim: true },
-    estado: { type: String, enum: ['pendiente', 'confirmada', 'cancelada'], default: 'pendiente' },
+    estado: { type: String, enum: ['pendiente', 'confirmada', 'cancelada'], default: 'confirmada' },
+    // Las reservas canceladas se ocultan al usuario pero el admin las ve en reportes
+    visibleParaUsuario: { type: Boolean, default: true },
 }, { timestamps: true })
 
 export default mongoose.model('Reserva', reservaSchema)
